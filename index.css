@@ -8,6 +8,11 @@
     padding: 0;
 }
 
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 #navbar {
     display: flex;
     justify-content: flex-end;
@@ -45,3 +50,22 @@ a {
     align-items: center;
 }
 
+h1 {
+    font-size: 5rem;
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+    html {
+        font-size: 60%;
+    }
+}
+
+
+
+/* 640px / 16px = 40em */
+@media (max-width: 40em) {
+    html {
+        font-size: 50%;
+    }
+}
