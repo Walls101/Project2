@@ -1,3 +1,47 @@
-h1 {
-    background-color: bisque;
+:root {
+    --main-blue: #45567d;
+    --main-white: #f0f0f0;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #352142;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navlist {
+    display:flex;
+    list-style-type: none;
+}
+
+.navlist a {
+    display: block;
+    color: var(--main-white);
+    padding: 1rem;
+}
+
+.navlist a:hover {
+    background-color: var(--main-blue);
+}
+
+a {
+    text-decoration: none;
+}
+
+#welcome-section {
+    height: 100vh;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
