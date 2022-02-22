@@ -61,6 +61,11 @@ h1 {
     align-items: center;
 }
 
+img {
+    width: 300px;
+    height: auto;
+}
+
 .project-tiles {
     display: flex;
     flex-wrap: wrap;
@@ -110,7 +115,3 @@ footer {
     }
 }
 
-img {
-    width: 300px;
-    height: auto;
-}
