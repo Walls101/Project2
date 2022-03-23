@@ -11,18 +11,35 @@ allCharsButton.addEventListener("click", function () {
 });
 
 const maleCharacters = people.filter(person => person.gender === "male")
-//Filter for female
-//Fiilter for all other
+
+const femaleCharacters = people.filter(person => person.gender === "female")
+
+const otherCharacters = people.filter(person => {
+    if (
+        person.gender === 'n/a' || 
+        person.gender === 'none' ||
+        person.gender === 'hermaphrodite'
+    ) {
+        return person
+    }
+})
 
 const maleCharsButton = document.createElement('button')
 maleCharsButton.textContent = "Male Characters"
 maleCharsButton.addEventListener("click", () => populateDom(maleCharacters))
 
-//femail character button
-//other character button
+const femaleCharsButton = document.createElement('button')
+femaleCharsButton.textContent = "Female Characters"
+femaleCharsButton.addEventListener("click", () => populateDom(femaleCharacters))
+
+const otherCharsButton = document.createElement('button')
+otherCharsButton.textContent = "Other Characters"
+otherCharsButton.addEventListener('click', () => populateDom(otherCharacters))
 
 header.appendChild(allCharsButton);
-header.appendChild(maleCharsButton)
+header.appendChild(maleCharsButton);
+header.appendChild(femaleCharsButton)
+header.appendChild(otherCharsButton);
 
 function populateDom(characters) {
     removeChildren(main)
@@ -40,3 +57,4 @@ function populateDom(characters) {
     });
 }
 
+populateDom(people)
