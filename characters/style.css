@@ -1,6 +1,21 @@
+*{
+    background-color: black;
+}
+
+figcaption {
+    color: yellow;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
+    background-color: black;
+    margin: ;
+}
+
+header {
+    background-color: grey;
 }
 
 figure img {
@@ -12,4 +27,6 @@ button {
     height: 3rem;
     margin: 1rem;
     background-color: green;
+    font-family: fantasy;
+    font-size: medium;
 }
