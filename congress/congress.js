@@ -4,6 +4,15 @@ import { representatives } from '../data/representatives.js'
 const allMembersOfCongress = [...senators, ...representatives]//modern combining of array data... like a genius
 
 const senatorDiv = document.querySelector('.senatorsDiv')
+const seniorityHeader = document.querySelector('.seniority')
+const loyaltyList = document.querySelector('.loyaltyList')
+
+function simplifiedSenators() {
+    return senators.map(senator => {
+        const middleName = senator.middle_name ? ' ${senator.middle_name} ' : ' '
+    })
+    
+}
 
 
 
