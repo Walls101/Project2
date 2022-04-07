@@ -1,5 +1,5 @@
 import { senators } from '../data/senators.js'
-import { representatives } from '../data/representatives.js'
+//import { representatives } from '../data/representatives.js'
 
 //const allMembersOfCongress = [...senators, ...representatives]//modern combining of array data... like a genius
 /*

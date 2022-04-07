@@ -6,9 +6,8 @@ const navList = document.querySelector(".navList")
 const shipViewer = document.querySelector(".shipViewer")
 const modal = document.querySelector('.modal')
 const closeButton  = document.querySelector('.modal-close')
-const closeBackground = document.querySelector('.box p')
+const closeBackground = document.querySelector('.modal-background')
 const shipMessage = document.querySelector('.box p')
-
 closeButton.addEventListener('click', () => modal.classList.toggle('is-active'))
 closeBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
 
