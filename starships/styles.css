@@ -4,8 +4,35 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: gray;
+}
+
+.mainContainer {
+    display: flex;
+}
+
+.box {
+    background-color: aqua;
+}
+
+.box p {
+    font-size: xx-large;
+    text-align: center;
+}
+
+
+.nav {
+    min-width: 20rem;
+}
+
 .navList {
     margin: 1rem;
     list-style-type: none;
     font-size: x-large;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
