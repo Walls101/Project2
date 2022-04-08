@@ -7,7 +7,17 @@ also need to make everything look nice!*/
 }
 
 body {
-    background-color: gray;
+    background-image: url("/images/starship_background-1.jpeg");
+}
+
+.shipViewer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.shipViewer img {
+    padding: 10rem;
 }
 
 .mainContainer {
@@ -15,7 +25,7 @@ body {
 }
 
 .box {
-    background-color: aqua;
+    background-color: yellow;
 }
 
 .box p {
@@ -23,6 +33,11 @@ body {
     text-align: center;
 }
 
+h1 {
+    color: white;
+    font-size: xx-large;
+    
+}
 
 .nav {
     min-width: 20rem;
@@ -37,4 +52,9 @@ body {
 a {
     text-decoration: none;
     color: white;
+}
+
+li:hover {
+    background-color: greenyellow;
+    color: black;
 }
