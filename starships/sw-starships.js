@@ -24,9 +24,34 @@ function populateNav() {
     })
 }
 populateNav()
+/*
+function starshipStuffs () {
+    return starships.map(starship => {
 
+        return {
+            name: starship.name,
+            passanger: starship.passengers,
+            rating: starship.hyperdrive_rating
+        }
+
+    })
+    
+}
+*/
 function populateShipView (shipData) {
     removeChildren(shipViewer)
+
+    /*starshipStuffs.forEach(starship => {
+        const shipFigure = document.createElement('figure')
+
+        figCaption.textContent = starship.name
+        
+
+        shipFigure.appendChild(figCaption)
+
+    })
+    */
+
 
     const shipImage = document.createElement('img')
     let shipNum = getLastNumber(shipData.url)
@@ -36,6 +61,5 @@ function populateShipView (shipData) {
         shipMessage.textContent = `The ${shipData.name} is currently out on a expedition! Sorry for the inconvinience!`
         modal.classList.toggle('is-active')
     })
-
     shipViewer.appendChild(shipImage)
 }

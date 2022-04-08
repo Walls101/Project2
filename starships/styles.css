@@ -50,6 +50,11 @@ h3 {
     min-width: 20rem;
 }
 
+footer {
+    color: white;
+    text-align: center;
+}
+
 .navList {
     margin: 1rem;
     list-style-type: none;
