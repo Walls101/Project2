@@ -28,13 +28,12 @@ populateNav()
 function populateShipView (shipData) {
     removeChildren(shipViewer)
 
-
     const shipImage = document.createElement('img')
     let shipNum = getLastNumber(shipData.url)
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
     shipImage.addEventListener('error', () => {
         shipImage.hidden = true
-        shipMessage.textContent = `The ship is known as ${shipData.name} is currently in space port  for repairs`
+        shipMessage.textContent = `The ${shipData.name} is currently out on a expedition! Sorry for the inconvinience!`
         modal.classList.toggle('is-active')
     })
 

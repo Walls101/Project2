@@ -1,9 +1,11 @@
-/*need to get the image in the middle and 
-also need to make everything look nice!*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+header {
+    text-align: center;
 }
 
 body {
