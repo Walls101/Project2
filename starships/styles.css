@@ -41,6 +41,11 @@ h1 {
     
 }
 
+h3 {
+    color: white;
+    font-size: x-large;
+}
+
 .nav {
     min-width: 20rem;
 }
