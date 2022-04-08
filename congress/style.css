@@ -5,7 +5,25 @@
     background-color: beige;
 }
 
+
+
 .senatorsDiv {
     display: flex;
     flex-wrap: wrap;
+}
+
+.senatorsDiv img {
+    padding: 1rem;
+}
+
+.senatorsDiv figcaption {
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
 }
