@@ -24,7 +24,7 @@ const getAPIData = async (url) => {
   newButton.textContent = 'New Pokemon'
   pokeHeader.appendChild(newButton)
   newButton.addEventListener('click', () => {
-    const pokeName = prompt('What is the name of your new Pokemon?', 'Thoremon')
+    const pokeName = prompt('What is the name of your new Pokemon?',) //'Thoremon')
     const pokeHeight = prompt("What is the Pokemon's height?", 80)
     const pokeWeight = prompt("What is the Pokemon's weight?", 2000)
     const pokeAbilities = prompt(
@@ -165,6 +165,9 @@ const getAPIData = async (url) => {
         break
       case 'poison':
         color = '#C300FF'
+        break
+      case 'ghost':
+        color = '#A292BC'
         break
       case 'electric':
         color = '#C8FF00'
