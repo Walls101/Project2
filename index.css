@@ -26,6 +26,8 @@ html {
 .navlist {
     display:flex;
     list-style-type: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
 }
 
 .navlist a {
