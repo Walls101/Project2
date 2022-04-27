@@ -11,12 +11,14 @@ const getAPIData = async (url) => {
   
   class Pokemon {
     constructor(name, height, weight, abilities, types) {
+      // would need to add 'moves' property to this constructor function. For moves
       ;(this.id = 9001),
         (this.name = name),
         (this.height = height),
         (this.weight = weight),
         (this.abilities = abilities),
         (this.types = types)
+        //would need (this.moves = moves) here
     }
   }
   
@@ -29,9 +31,11 @@ const getAPIData = async (url) => {
   loadButton.textContent = 'Load Pokemon'
   pokeHeader.appendChild(loadButton)
   loadButton.addEventListener('click', async () =>{
+    removeChildren(pokeGrid)
     if( loadedPokemon.length === 0) {
-      removeChildren(pokeGrid)
       await loadPokemon(0,50)
+    } else {
+      loadedPokemon.forEach((item) => populatePokeCard(item))
     }
   })
 
@@ -49,12 +53,15 @@ const getAPIData = async (url) => {
       "What are your Pokemon's types? (up to 2 types separated by a space)",
     )
   
+    //Prompt the user for a set of moves if you want to show them
+
     const newPokemon = new Pokemon(
       pokeName,
       pokeHeight,
       pokeWeight,
       makeAbilitiesArray(pokeAbilities),
       makeTypesArray(pokeTypes),
+      //makeMovesArray would be called here
     )
     console.log(newPokemon)
     populatePokeCard(newPokemon)
@@ -74,6 +81,9 @@ const getAPIData = async (url) => {
     })
   }
   
+// similar function named 'makeMovesArray' goes here
+
+
   async function loadPokemon(offset = 0, limit = 25) {
     const data = await getAPIData(
       `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
@@ -88,6 +98,7 @@ const getAPIData = async (url) => {
         abilities: singlePokemon.abilities,
         types: singlePokemon.types,
         moves: singlePokemon.moves.slice(0, 3),
+        hp: singlePokemon.stats[0].base_stat
       }
       loadedPokemon.push(simplifiedPokemon)
       populatePokeCard(simplifiedPokemon)
@@ -150,6 +161,10 @@ const getAPIData = async (url) => {
       abilityList.appendChild(listItem)
     })
     pokeBack.appendChild(abilityList)
+    
+    const pokeHP = document.createElement("h4")
+    pokeHP.textContent = `HP: ${pokemon.hp}`
+    pokeBack.appendChild(pokeHP)
   
     return pokeBack
   }
