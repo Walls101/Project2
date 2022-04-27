@@ -178,6 +178,27 @@ const getAPIData = async (url) => {
       case 'ground':
         color = '#E0C068'
         break
+      case 'dark':
+        color = '#A29288'
+        break
+      case 'dragon':
+        color = '#A27DFA'
+        break
+      case 'fairy':
+        color = '#EE99AC'
+        break
+      case 'fighting':
+        color = '#D67873'
+        break
+      case 'ice':
+        color = '#98D8D8'
+        break
+      case 'rock':
+        color = '#B8A038'
+        break
+      case 'steel':
+        color = '#B8B8D0'
+        break
       default:
         color = '#68A090'
     }
