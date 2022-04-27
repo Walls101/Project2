@@ -11,14 +11,14 @@ const getAPIData = async (url) => {
   
   class Pokemon {
     constructor(name, height, weight, abilities, types, moves) {
-      // would need to add 'moves' property to this constructor function. For moves
+      // (done)would need to add 'moves' property to this constructor function. For moves
       ;(this.id = 9001),
         (this.name = name),
         (this.height = height),
         (this.weight = weight),
         (this.abilities = abilities),
         (this.types = types),
-        //would need (this.moves = moves) here
+        //would need (this.moves = moves) here (done)
         (this.moves = moves)
     }
   }
@@ -53,8 +53,11 @@ const getAPIData = async (url) => {
     const pokeTypes = prompt(
       "What are your Pokemon's types? (up to 2 types separated by a space)",
     )
+    const pokeMoves = prompt(
+      "What are your Pokemon's moves? (up to 2 moves and separated by a comma)"
+    )
   
-    //Prompt the user for a set of moves if you want to show them
+    //Prompt the user for a set of moves if you want to show them(done)
 
     const newPokemon = new Pokemon(
       pokeName,
@@ -62,7 +65,8 @@ const getAPIData = async (url) => {
       pokeWeight,
       makeAbilitiesArray(pokeAbilities),
       makeTypesArray(pokeTypes),
-      //makeMovesArray would be called here
+      //makeMovesArray would be called here (done)
+      makeMovesArray(pokeMoves)
     )
     console.log(newPokemon)
     populatePokeCard(newPokemon)
@@ -82,8 +86,12 @@ const getAPIData = async (url) => {
     })
   }
   
-// similar function named 'makeMovesArray' goes here
-
+// similar function named 'makeMovesArray' goes here(done)
+  function makeMovesArray(commaString) {
+    return commaString.split(",").map((movesName) => {
+      return { moves: {name: movesName}}
+    })
+  }
 
   async function loadPokemon(offset = 0, limit = 25) {
     const data = await getAPIData(
@@ -98,7 +106,7 @@ const getAPIData = async (url) => {
         name: singlePokemon.name,
         abilities: singlePokemon.abilities,
         types: singlePokemon.types,
-        moves: singlePokemon.moves.slice(0, 3),
+        moves: singlePokemon.moves.slice(0, 2),
         hp: singlePokemon.stats[0].base_stat
       }
       loadedPokemon.push(simplifiedPokemon)
@@ -166,6 +174,14 @@ const getAPIData = async (url) => {
     const pokeHP = document.createElement("h4")
     pokeHP.textContent = `HP: ${pokemon.hp}`
     pokeBack.appendChild(pokeHP)
+
+    const moveList = document.createElement('ul')
+    pokemon.moves.forEach((moveItem) => {
+      const itemList = document.createElement('li')
+      itemList.textContent = moveItem.move.name
+      moveList.appendChild(itemList)
+    })
+    pokeBack.appendChild(moveList)
   
     return pokeBack
   }
