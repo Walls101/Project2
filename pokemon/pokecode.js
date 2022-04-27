@@ -222,5 +222,11 @@ const getAPIData = async (url) => {
     return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
   }
   
-  console.log(filterPokemonByType('grass'))
   // not figured out yet what the UI might be for sorted/filtered pokemon...
+  const typeSelect = document.querySelector('.typeSelect')
+  typeSelect.addEventListener('change', (event) => {
+    const userTypeChoice = event.target.value.toLowerCase()
+    const pokemonByType = filterPokemonByType(userTypeChoice)
+    removeChildren(pokeGrid)
+    pokemonByType.forEach((singlePokemon) => populatePokeCard(singlePokemon))
+  })
