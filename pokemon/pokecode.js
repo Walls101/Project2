@@ -10,15 +10,16 @@ const getAPIData = async (url) => {
   }
   
   class Pokemon {
-    constructor(name, height, weight, abilities, types) {
+    constructor(name, height, weight, abilities, types, moves) {
       // would need to add 'moves' property to this constructor function. For moves
       ;(this.id = 9001),
         (this.name = name),
         (this.height = height),
         (this.weight = weight),
         (this.abilities = abilities),
-        (this.types = types)
+        (this.types = types),
         //would need (this.moves = moves) here
+        (this.moves = moves)
     }
   }
   
