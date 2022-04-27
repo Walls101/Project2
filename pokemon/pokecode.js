@@ -1,3 +1,5 @@
+import {  removeChildren  } from '../utils/index.js'
+
 const getAPIData = async (url) => {
     try {
       const result = await fetch(url)
@@ -18,8 +20,21 @@ const getAPIData = async (url) => {
     }
   }
   
+  const loadedPokemon = []
+
   const pokeHeader = document.querySelector('header')
   const pokeGrid = document.querySelector('.pokegrid')
+
+  const loadButton = document.createElement('button')
+  loadButton.textContent = 'Load Pokemon'
+  pokeHeader.appendChild(loadButton)
+  loadButton.addEventListener('click', async () =>{
+    if( loadedPokemon.length === 0) {
+      removeChildren(pokeGrid)
+      await loadPokemon(0,50)
+    }
+  })
+
   const newButton = document.createElement('button')
   newButton.textContent = 'New Pokemon'
   pokeHeader.appendChild(newButton)
@@ -58,8 +73,6 @@ const getAPIData = async (url) => {
       return { type: { name: typeName } }
     })
   }
-  
-  const loadedPokemon = []
   
   async function loadPokemon(offset = 0, limit = 25) {
     const data = await getAPIData(
@@ -208,8 +221,6 @@ const getAPIData = async (url) => {
   function filterPokemonByType(type) {
     return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
   }
-  
-  await loadPokemon(0, 50)
   
   console.log(filterPokemonByType('grass'))
   // not figured out yet what the UI might be for sorted/filtered pokemon...
