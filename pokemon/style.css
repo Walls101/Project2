@@ -13,8 +13,6 @@
     margin: auto;
     margin-left: auto;
     margin-right: auto;
-    
-   
   }
 
   .pokegrid {
@@ -77,4 +75,27 @@
 
   ul {
     list-style-type: '\01F449';
+  }
+
+  button {
+    padding: 15px 32px;
+  }
+
+  .typeSelect {
+    padding: 15px 32px;
+    background-color: aquamarine;
+    font-size: large;
+  }
+
+  header button{
+    margin-left: 12rem;
+    margin-top: 5px;
+    background-color: aquamarine;
+    font-size: large;
+    cursor: pointer;
+  }
+
+  header .typeSelect {
+    margin-left: 10rem;
+    cursor: pointer;
   }
