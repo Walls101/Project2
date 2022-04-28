@@ -10,9 +10,8 @@
 
   #logo {
     display: flex;
-    margin: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 37rem;
+    width: 20rem;
   }
 
   .pokegrid {
@@ -98,4 +97,11 @@
   header .typeSelect {
     margin-left: 10rem;
     cursor: pointer;
+  }
+
+  h1 {
+    margin-left: 37rem;
+    width: 16rem;
+    background-color: skyblue;
+    font-family: 'Courier New', Courier, monospace;
   }
