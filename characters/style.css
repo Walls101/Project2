@@ -11,9 +11,9 @@ main {
     display: flex;
     flex-wrap: wrap;
     background-color: black;
-
+}
 header {
-    background-color: grey;
+    background-color: gray;
 }
 
 figure img {
