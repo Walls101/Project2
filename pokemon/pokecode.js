@@ -106,8 +106,13 @@ const getAPIData = async (url) => {
         name: singlePokemon.name,
         abilities: singlePokemon.abilities,
         types: singlePokemon.types,
-        moves: singlePokemon.moves.slice(0, 2),
-        hp: singlePokemon.stats[0].base_stat
+        moves: singlePokemon.moves.slice(0, 3),
+        hp: singlePokemon.stats[0].base_stat,
+        attack: singlePokemon.stats[1].base_stat,
+        defense: singlePokemon.stats[2].base_stat,
+        specialAtk: singlePokemon.stats[3].base_stat,
+        specialDef: singlePokemon.stats[4].base_stat,
+        speed: singlePokemon.stats[5].base_stat
       }
       loadedPokemon.push(simplifiedPokemon)
       populatePokeCard(simplifiedPokemon)
@@ -155,7 +160,7 @@ const getAPIData = async (url) => {
     pokeFront.appendChild(pokeCaption)
     return pokeFront
   }
-  
+  //I've added moves to the back of the card but I need to add moves label to them.
   function populateCardBack(pokemon) {
     const pokeBack = document.createElement('div')
     pokeBack.className = 'cardFace back'
@@ -170,11 +175,10 @@ const getAPIData = async (url) => {
       abilityList.appendChild(listItem)
     })
     pokeBack.appendChild(abilityList)
-    
-    const pokeHP = document.createElement("h4")
-    pokeHP.textContent = `HP: ${pokemon.hp}`
-    pokeBack.appendChild(pokeHP)
 
+    const label1 = document.createElement('h4')
+    label1.textContent = 'Moves'
+    pokeBack.appendChild(label1)
     const moveList = document.createElement('ul')
     pokemon.moves.forEach((moveItem) => {
       const itemList = document.createElement('li')
@@ -182,6 +186,30 @@ const getAPIData = async (url) => {
       moveList.appendChild(itemList)
     })
     pokeBack.appendChild(moveList)
+
+    const pokeHP = document.createElement("h4")
+    pokeHP.textContent = `HP: ${pokemon.hp}`
+    pokeBack.appendChild(pokeHP)
+
+    const pokeAtk = document.createElement('h4')
+    pokeAtk.textContent = `Attack: ${pokemon.attack}`
+    pokeBack.appendChild(pokeAtk)
+
+    const pokeDef = document.createElement('h4')
+    pokeDef.textContent = `Defense: ${pokemon.defense}`
+    pokeBack.appendChild(pokeDef)
+
+    const pokeSAtk = document.createElement('h4')
+    pokeSAtk.textContent = `S. Attack: ${pokemon.specialAtk}`
+    pokeBack.appendChild(pokeSAtk)
+
+    const pokeSDef = document.createElement('h4')
+    pokeSDef.textContent = `S. Defense: ${pokemon.specialDef}`
+    pokeBack.appendChild(pokeSDef)
+
+    const pokeSpd = document.createElement('h4')
+    pokeSpd.textContent = `Speed: ${pokemon.speed}`
+    pokeBack.appendChild(pokeSpd)
   
     return pokeBack
   }
