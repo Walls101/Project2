@@ -1,23 +1,41 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: fantasy;
-    background-color: black;
-    color: white;
+    font-family: monospace;
 }
 
 h1 {
-    color: green;
-
+    color: aqua;
+    margin-left: 35%;
+    background-color: black;
 }
 
 header {
-    background-color: blue;
+    background-color: black;
+    height: 3rem;
+}
+
+figcaption {
+    padding: 5px;
+    font-size: x-large;
+    background-color: black;
+    color: aqua;
+    width: auto;
+}
+
+body {
+    background-image: url('/images/movieBackground.png');
 }
 
 main {
     display: flex;
     flex-wrap: wrap;
-    margin-right: 10rem;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-left: 5px;
+    padding: 10px;
+}
+
+img {
+    margin-top: 2rem;
 }
