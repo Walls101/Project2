@@ -24,35 +24,19 @@ function populateNav() {
     })
 }
 populateNav()
-/*
-function starshipStuffs () {
-    return starships.map(starship => {
 
+function starshipStuffs (starships) {
+    return starships.map(starship => {
         return {
-            name: starship.name,
-            passanger: starship.passengers,
-            rating: starship.hyperdrive_rating
+            
         }
 
     })
     
 }
-*/
+
 function populateShipView (shipData) {
     removeChildren(shipViewer)
-
-    /*starshipStuffs.forEach(starship => {
-        const shipFigure = document.createElement('figure')
-
-        figCaption.textContent = starship.name
-        
-
-        shipFigure.appendChild(figCaption)
-
-    })
-    */
-
-
     const shipImage = document.createElement('img')
     let shipNum = getLastNumber(shipData.url)
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
@@ -62,4 +46,9 @@ function populateShipView (shipData) {
         modal.classList.toggle('is-active')
     })
     shipViewer.appendChild(shipImage)
+
+    const shipPassanger = document.createElement('h1')
+    shipPassanger.textContent = `# of Passangers: ${shipData.passengers}`
+    shipViewer.appendChild(shipPassanger)
+    
 }
