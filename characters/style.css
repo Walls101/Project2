@@ -11,13 +11,15 @@ figcaption {
 main {
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
+    background-image: url("/images/star-wars-backgrounds-25.jpeg");
+    justify-content: space-around;
 }
 header {
     background-color: gray;
     font-size: xx-large;
     text-decoration: underline;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 figure img {
@@ -31,4 +33,5 @@ button {
     background-color: green;
     font-family: fantasy;
     font-size: medium;
+    cursor: pointer;
 }
