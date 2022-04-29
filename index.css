@@ -46,10 +46,15 @@ a {
 
 #welcome-section {
     height: 100vh;
-    background-color: bisque;
+    background-color: rgb(6, 181, 6);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+p {
+    font-size: x-large;
 }
 
 h1 {
@@ -61,6 +66,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: aqua;
 }
 
 img {
@@ -82,6 +88,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(224, 14, 224);
 }
 
 .contact-links a {
@@ -99,6 +106,7 @@ img {
 footer {
     text-align: center;
     padding: 1rem;
+    background-color: rgb(224, 14, 224);
 }
 
 /* 980px / 16px = 61.25em */
