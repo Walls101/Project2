@@ -104,7 +104,7 @@ const getAPIData = async (url) => {
         height: singlePokemon.height,
         weight: singlePokemon.weight,
         name: singlePokemon.name,
-        abilities: singlePokemon.abilities,
+        abilities: singlePokemon.abilities.slice(0,2),
         types: singlePokemon.types,
         moves: singlePokemon.moves.slice(0, 3),
         hp: singlePokemon.stats[0].base_stat,
