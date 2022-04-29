@@ -1,5 +1,6 @@
 import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
+import { removeChildren } from '../utils/index.js'
 
 const allMembersOfCongress = [...senators, ...representatives]//modern combining of array data... like a boss :D
 const senatorsDiv = document.querySelector('.senatorsDiv')
@@ -25,7 +26,21 @@ function simplifiedSenators() {
     })
     
 }
+/*
+const RepSenators = senators.filter(senator => senator.party === "R")
+const DemSenators = senators.filter(senator => senator.party === "D")
 
+const RepSenButton = document.createElement("button")
+RepSenButton.textContent = "Republican Party"
+RepSenButton.addEventListener("click", () => populateDom(RepSenators))
+
+const DemSenButton = document.createElement("button")
+DemSenButton.textContent = "Democratic Party"
+DemSenButton.addEventListener("click", () => populateDom(DemSenators))
+
+header.appendChild(RepSenButton);
+header.appendChild(DemSenButton);
+*/
 function populateSenatorDiv(simplifiedSenators) {
     simplifiedSenators.forEach(senator => {
         const senFigure = document.createElement('figure')

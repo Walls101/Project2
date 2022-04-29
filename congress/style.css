@@ -5,7 +5,9 @@
     background-color: beige;
 }
 
-
+h1 {
+    background-color: greenyellow;
+}
 
 .senatorsDiv {
     display: flex;
