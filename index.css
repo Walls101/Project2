@@ -74,6 +74,22 @@ img {
     height: auto;
 }
 
+.project-tiles img {
+    float: left;
+    width:  300px;
+    height: 300px;
+    object-fit: cover;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: black;
+}
+
+.project-tiles figcaption {
+    text-align: center;
+    font-size: x-large;
+    font-family: fantasy;
+}
+
 .project-tiles {
     display: flex;
     flex-wrap: wrap;
