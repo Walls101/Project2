@@ -26,6 +26,7 @@ body {
 
 .shipViewer h1 {
     background-color: paleturquoise;
+    color: black;
 }
 
 .shipViewer img {
