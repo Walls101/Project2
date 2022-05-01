@@ -18,7 +18,7 @@ function populateNav() {
         anchor.href = '#'
         anchor.textContent = starship.name
         anchor.addEventListener('click', () => populateShipView(starship))
-        listItem.addEventListener('click', () => populateShipView(starship))
+        
 
         listItem.appendChild(anchor)
         navList.appendChild(listItem)

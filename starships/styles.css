@@ -24,6 +24,10 @@ body {
     margin-right: 5rem;
 }
 
+.shipViewer h1 {
+    background-color: paleturquoise;
+}
+
 .shipViewer img {
     padding: 10rem;
 }
