@@ -25,15 +25,6 @@ function populateNav() {
 }
 populateNav()
 
-function starshipStuffs (starships) {
-    return starships.map(starship => {
-        return {
-            
-        }
-
-    })
-    
-}
 
 function populateShipView (shipData) {
     removeChildren(shipViewer)
@@ -44,9 +35,10 @@ function populateShipView (shipData) {
         shipImage.hidden = true
         shipMessage.textContent = `The ${shipData.name} is currently out on a expedition! Sorry for the inconvinience!`
         modal.classList.toggle('is-active')
+        removeChildren(shipViewer)
     })
     shipViewer.appendChild(shipImage)
-
+    
     const shipPassanger = document.createElement('h1')
     shipPassanger.textContent = `# of Passangers: ${shipData.passengers}`
     shipViewer.appendChild(shipPassanger)
