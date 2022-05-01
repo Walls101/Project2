@@ -34,7 +34,7 @@ function populateShipView (shipData) {
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
     shipImage.addEventListener('error', () => {
         shipImage.hidden = true
-        shipMessage.textContent = `The ${shipData.name} is currently out on a expedition! Sorry for the inconvinience!`
+        shipMessage.textContent = `The ${shipData.name} is currently out on a expedition! Sorry for the inconvenience!`
         modal.classList.toggle('is-active')
         removeChildren(shipViewer)
     })
