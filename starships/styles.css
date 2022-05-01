@@ -10,6 +10,8 @@ header {
 
 body {
     background-image: url("/images/starship_background-1.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .shipViewer {
