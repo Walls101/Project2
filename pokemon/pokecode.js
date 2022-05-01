@@ -10,7 +10,7 @@ const getAPIData = async (url) => {
   }
   
   class Pokemon {
-    constructor(name, height, weight, abilities, types, moves) {
+    constructor(name, height, weight, abilities, types, moves, hp, attack, defense, specialAtack, specialDefense, speed) {
       // (done)would need to add 'moves' property to this constructor function. For moves
       ;(this.id = 9001),
         (this.name = name),
@@ -19,7 +19,13 @@ const getAPIData = async (url) => {
         (this.abilities = abilities),
         (this.types = types),
         //would need (this.moves = moves) here (done)
-        (this.moves = moves)
+        (this.moves = moves),
+        (this.hp = hp),
+        (this.attack = attack),
+        (this.defense = defense),
+        (this.specialAtack = specialAtack),
+        (this.specialDefense = specialDefense),
+        (this.speed = speed)
     }
   }
   
@@ -48,14 +54,20 @@ const getAPIData = async (url) => {
     const pokeHeight = prompt("What is the Pokemon's height?")
     const pokeWeight = prompt("What is the Pokemon's weight?")
     const pokeAbilities = prompt(
-      "What are your Pokemon's abilities? (use a comma separated list)",
+      "What are your Pokemon's abilities? (use a comma separated list)"
     )
     const pokeTypes = prompt(
-      "What are your Pokemon's types? (up to 2 types separated by a space)",
+      "What are your Pokemon's types? (up to 2 types separated by a space)"
     )
     const pokeMoves = prompt(
       "What are your Pokemon's moves? (up to 2 moves and separated by a comma)"
     )
+    const pokemonHp = prompt("What is the pokemon's HP?")
+    const pokemonAtk = prompt("What is the pokemon's Attack?")
+    const pokemonDef = prompt("What is the pokemon's Defense?")
+    const pokemonSpecialAtk = prompt("What is the pokemon's Special Attack?")
+    const pokemonSpecialDef = prompt("What is the pokemon's Special Defense?")
+    const pokemonSpd = prompt("What is the pokemon's Speed?")
   
     //Prompt the user for a set of moves if you want to show them(done)
 
@@ -66,7 +78,13 @@ const getAPIData = async (url) => {
       makeAbilitiesArray(pokeAbilities),
       makeTypesArray(pokeTypes),
       //makeMovesArray would be called here (done)
-      makeMovesArray(pokeMoves)
+      makeMovesArray(pokeMoves),
+      pokemonHp,
+      pokemonAtk,
+      pokemonDef,
+      pokemonSpecialAtk,
+      pokemonSpecialDef,
+      pokemonSpd
     )
     console.log(newPokemon)
     populatePokeCard(newPokemon)
@@ -106,7 +124,7 @@ const getAPIData = async (url) => {
         name: singlePokemon.name,
         abilities: singlePokemon.abilities.slice(0,2),
         types: singlePokemon.types,
-        moves: singlePokemon.moves.slice(0, 3),
+        moves: singlePokemon.moves.slice(0, 2),
         hp: singlePokemon.stats[0].base_stat,
         attack: singlePokemon.stats[1].base_stat,
         defense: singlePokemon.stats[2].base_stat,
@@ -175,10 +193,11 @@ const getAPIData = async (url) => {
       abilityList.appendChild(listItem)
     })
     pokeBack.appendChild(abilityList)
-
+    
     const label1 = document.createElement('h4')
     label1.textContent = 'Moves'
     pokeBack.appendChild(label1)
+
     const moveList = document.createElement('ul')
     pokemon.moves.forEach((moveItem) => {
       const itemList = document.createElement('li')
@@ -186,7 +205,7 @@ const getAPIData = async (url) => {
       moveList.appendChild(itemList)
     })
     pokeBack.appendChild(moveList)
-
+    /*
     const pokeHP = document.createElement("h4")
     pokeHP.textContent = `HP: ${pokemon.hp}`
     pokeBack.appendChild(pokeHP)
@@ -210,7 +229,7 @@ const getAPIData = async (url) => {
     const pokeSpd = document.createElement('h4')
     pokeSpd.textContent = `Speed: ${pokemon.speed}`
     pokeBack.appendChild(pokeSpd)
-  
+    */
     return pokeBack
   }
   
