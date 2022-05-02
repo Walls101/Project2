@@ -50,6 +50,10 @@
     border-radius: 5px;
     padding: .5rem;
   }
+
+  .cardFace img {
+    justify-content: center;
+  }
   
   .front {
     background-color: aqua;

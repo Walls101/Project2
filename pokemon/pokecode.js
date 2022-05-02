@@ -10,7 +10,7 @@ const getAPIData = async (url) => {
   }
   
   class Pokemon {
-    constructor(name, height, weight, abilities, types, moves, hp, attack, defense, specialAtack, specialDefense, speed) {
+    constructor(name, height, weight, abilities, types, hp, attack, defense, specialAtk, specialDef, speed) {
       // (done)would need to add 'moves' property to this constructor function. For moves
       ;(this.id = 9001),
         (this.name = name),
@@ -19,12 +19,12 @@ const getAPIData = async (url) => {
         (this.abilities = abilities),
         (this.types = types),
         //would need (this.moves = moves) here (done)
-        (this.moves = moves),
+        //(this.moves = moves),
         (this.hp = hp),
         (this.attack = attack),
         (this.defense = defense),
-        (this.specialAtack = specialAtack),
-        (this.specialDefense = specialDefense),
+        (this.specialAtk = specialAtk),
+        (this.specialDef = specialDef),
         (this.speed = speed)
     }
   }
@@ -54,14 +54,16 @@ const getAPIData = async (url) => {
     const pokeHeight = prompt("What is the Pokemon's height?")
     const pokeWeight = prompt("What is the Pokemon's weight?")
     const pokeAbilities = prompt(
-      "What are your Pokemon's abilities? (use a comma separated list)"
+      "What are your Pokemon's abilities? (up to 3 abilities use a comma to separate each.)"
     )
     const pokeTypes = prompt(
       "What are your Pokemon's types? (up to 2 types separated by a space)"
     )
+    /*
     const pokeMoves = prompt(
       "What are your Pokemon's moves? (up to 2 moves and separated by a comma)"
     )
+    */
     const pokemonHp = prompt("What is the pokemon's HP?")
     const pokemonAtk = prompt("What is the pokemon's Attack?")
     const pokemonDef = prompt("What is the pokemon's Defense?")
@@ -78,7 +80,7 @@ const getAPIData = async (url) => {
       makeAbilitiesArray(pokeAbilities),
       makeTypesArray(pokeTypes),
       //makeMovesArray would be called here (done)
-      makeMovesArray(pokeMoves),
+      //makeMovesArray(pokeMoves),
       pokemonHp,
       pokemonAtk,
       pokemonDef,
@@ -105,12 +107,13 @@ const getAPIData = async (url) => {
   }
   
 // similar function named 'makeMovesArray' goes here(done)
+/*
   function makeMovesArray(commaString) {
     return commaString.split(",").map((movesName) => {
       return { moves: {name: movesName}}
     })
   }
-
+*/
   async function loadPokemon(offset = 0, limit = 25) {
     const data = await getAPIData(
       `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
@@ -122,7 +125,7 @@ const getAPIData = async (url) => {
         height: singlePokemon.height,
         weight: singlePokemon.weight,
         name: singlePokemon.name,
-        abilities: singlePokemon.abilities.slice(0,2),
+        abilities: singlePokemon.abilities.slice(0,3),
         types: singlePokemon.types,
         moves: singlePokemon.moves.slice(0, 2),
         hp: singlePokemon.stats[0].base_stat,
@@ -167,7 +170,7 @@ const getAPIData = async (url) => {
   
     const pokeImg = document.createElement('img')
     if (pokemon.id === 9001) {
-      pokeImg.src = '../images/pokeball.png'
+      pokeImg.src = '../images/Poke_Ball.webp'
     } else {
       pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
     }
@@ -193,11 +196,11 @@ const getAPIData = async (url) => {
       abilityList.appendChild(listItem)
     })
     pokeBack.appendChild(abilityList)
-    
+    /*
     const label1 = document.createElement('h4')
     label1.textContent = 'Moves'
     pokeBack.appendChild(label1)
-
+    
     const moveList = document.createElement('ul')
     pokemon.moves.forEach((moveItem) => {
       const itemList = document.createElement('li')
@@ -205,7 +208,7 @@ const getAPIData = async (url) => {
       moveList.appendChild(itemList)
     })
     pokeBack.appendChild(moveList)
-    /*
+    */
     const pokeHP = document.createElement("h4")
     pokeHP.textContent = `HP: ${pokemon.hp}`
     pokeBack.appendChild(pokeHP)
@@ -229,7 +232,7 @@ const getAPIData = async (url) => {
     const pokeSpd = document.createElement('h4')
     pokeSpd.textContent = `Speed: ${pokemon.speed}`
     pokeBack.appendChild(pokeSpd)
-    */
+    
     return pokeBack
   }
   
