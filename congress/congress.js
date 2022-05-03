@@ -5,6 +5,7 @@ import { removeChildren } from '../utils/index.js'
 const allMembersOfCongress = [...senators, ...representatives]//modern combining of array data... like a boss :D
 const senatorsDiv = document.querySelector('.senatorsDiv')
 const seniorityHeader = document.querySelector('.seniority')
+const loyaltyPeople = document.querySelector('.loyaltyPeople')
 const loyaltyList = document.querySelector('.loyaltyList')
 
 function simplifiedSenators() {
@@ -69,7 +70,10 @@ const biggestVactionerList = simplifiedSenators().filter(senator => senator.miss
 
 seniorityHeader.textContent = `The most senior Senator is ${mostSeniorMember.name} and the biggest fans of vacations are ${biggestVactionerList}.`
 
+
+
 simplifiedSenators().forEach(senator => {
+    loyaltyPeople.textContent = 'This is a list of the most loyal!'
     if(senator.loyaltyPct === 100) {
         let listItem = document.createElement('li')
         listItem.textContent = senator.name
